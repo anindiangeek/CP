@@ -8,9 +8,20 @@ using namespace std;
 
 void solve()
 {
-    long int a = 0;
-    cin >> a;
+    long int n = 0;
+    cin >> n;
+    int ld = (n % 10);
+    // n = (n / 10);
+    // will reverse the number.
+    ll int fd = 0;
+    for (ll int i = n; i > 0; i = i / 10)
+    {
+        fd = i % 10;
+    }
+    cout << ld + fd;
+    ENDL;
 }
+
 int main()
 {
     ios_base::sync_with_stdio(0);
