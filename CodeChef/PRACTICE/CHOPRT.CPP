@@ -3,21 +3,33 @@ using namespace std;
 
 #define ll long long
 #define ull unsigned long long
-#define ENDL cout << '\n'
+#define Endl cout << '\n'
 #define nbsp cout << " "
 #define fon(i, n) for (ll int i = 0; i < n; i++)
 
 void solve()
 {
-    ll int n;
-    cin >> n;
-    ll int fact = 1;
-    for (size_t i = n; i > 0; --i)
+    ll int a;
+    ll int b;
+    cin >> a >> b;
+    if (a != b)
     {
-        fact = fact * i;
+        if (a > b)
+        {
+            cout << ">";
+            Endl;
+        }
+        else
+        {
+            cout << "<";
+            Endl;
+        }
     }
-    cout << fact;
-    ENDL;
+    else
+    {
+        cout << "=";
+        Endl;
+    }
 }
 int main()
 {

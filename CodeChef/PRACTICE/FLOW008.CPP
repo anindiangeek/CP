@@ -11,13 +11,7 @@ void solve()
 {
     ll int n;
     cin >> n;
-    ll int fact = 1;
-    for (size_t i = n; i > 0; --i)
-    {
-        fact = fact * i;
-    }
-    cout << fact;
-    ENDL;
+    (n < 10) ? cout << "Thanks for helping Chef!\n" : cout << "-1\n";
 }
 int main()
 {

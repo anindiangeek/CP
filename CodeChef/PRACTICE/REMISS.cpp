@@ -9,15 +9,10 @@ using namespace std;
 
 void solve()
 {
-    ll int n;
-    cin >> n;
-    ll int fact = 1;
-    for (size_t i = n; i > 0; --i)
-    {
-        fact = fact * i;
-    }
-    cout << fact;
-    ENDL;
+    ll int a;
+    ll int b;
+    cin >> a >> b;
+    
 }
 int main()
 {
