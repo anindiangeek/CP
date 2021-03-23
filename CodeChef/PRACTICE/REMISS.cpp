@@ -3,8 +3,8 @@ using namespace std;
 
 #define ll long long
 #define ull unsigned long long
-#define ENDL cout << '\n'
-#define nbsp cout << " "
+#define Endl << '\n'
+#define nbsp << " "
 #define fon(i, n) for (ll int i = 0; i < n; i++)
 
 void solve()
@@ -12,7 +12,7 @@ void solve()
     ll int a;
     ll int b;
     cin >> a >> b;
-    
+    cout << max(a, b) nbsp << (a + b) Endl;
 }
 int main()
 {
