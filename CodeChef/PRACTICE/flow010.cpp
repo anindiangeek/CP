@@ -18,7 +18,7 @@ void solve()
     case 'B':
     {
 
-        cout << "Battleship";
+        cout << "BattleShip";
         Endl;
         break;
     }
