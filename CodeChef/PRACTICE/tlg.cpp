@@ -15,6 +15,7 @@ void solve()
     cin >> n;
     ll int si[n];
     int ti[n];
+    ll int lead;
     fon(i, n)
     {
         cin >> si[i];

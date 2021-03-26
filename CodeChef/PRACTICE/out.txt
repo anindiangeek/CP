@@ -1,5 +1,11 @@
-Battleship
-Cruiser
-Destroyer
-Frigate
-Frigate
+0
+0
+2
+2
+8
+8
+18
+18
+32
+32
+50
