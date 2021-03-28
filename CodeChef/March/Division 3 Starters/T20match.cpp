@@ -12,6 +12,21 @@ using namespace std;
 void solve()
 {
 
+    ll int aas[3];
+    for (int i = 0; i < 3; i++)
+    {
+        cin >> aas[i];
+    }
+    if (aas[0] < aas[2])
+    {
+        cout << "Yes" << endl;
+    }
+    else
+    {
+        int left = (20 - aas[1]) * 36;
+        aas[2] = aas[2] + left;
+        (aas[2] > aas[0]) ? cout << "Yes" << endl : cout << "No" << endl;
+    }
 }
 int main()
 {
@@ -20,11 +35,11 @@ int main()
 #else
     fastio;
 #endif
-    ll int t;
-    cin >> t;
-    while (t--)
+    // ll int t;
+    // cin >> t;
+    // while (t--)
     {
         solve();
     }
     return 0;
-}`
+}
