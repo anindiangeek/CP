@@ -1,6 +1,5 @@
-//#include <bits/stdc++.h>
-#include <iostream>
-#include <vector>
+#include <bits/stdc++.h>
+//#include <iostream>
 using namespace std;
 
 #define ll long long
@@ -9,9 +8,39 @@ using namespace std;
 #define nbsp cout << " ";
 #define fon(i, n) for (ll int i = 0; i < n; i++)
 
-void file_io()
+void solve()
 {
+    ull int n = 0;
+    cin >> n;
+    int arr[n];
+    ull int sum = 0;
+    for (size_t i = 0; i < n; i++)
+    {
+        cin >> arr[i];
+        sum = sum + arr[i];
 
+
+    }
+    if (sum % 2 == 0)
+    {
+        cout << "0";
+        Endl;
+        return;
+    }
+    else
+    {
+        sort(arr, arr + n);
+        if (arr)
+        {
+            /* code */
+        }
+
+    }
+
+
+}
+int main()
+{
     ios_base::sync_with_stdio(0);
     cin.tie(0);
     cout.tie(0);
@@ -21,25 +50,6 @@ void file_io()
 #else
     // online submission
 #endif
-}
-void solve()
-{
-    int h = 0;
-    float c = 0, t = 0;
-    cin >> h >> c >> t;
-    switch (grade)
-    {
-    case:
-        /* code */
-        break;
-
-    default:
-        break;
-    }
-}
-int main()
-{
-    file_io();
     ll int t;
     cin >> t;
     do
