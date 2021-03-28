@@ -1,2 +1,4 @@
 .vscode
 .txt
+c_cpp_properties.json
+.DS_store
