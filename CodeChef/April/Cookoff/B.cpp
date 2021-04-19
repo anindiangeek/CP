@@ -14,7 +14,6 @@ using namespace std;
 
 void solve()
 {
-    ll pp = 0;
     ll n = 0, r = 0;
     cin >> n >> r;
     ll a[n];
