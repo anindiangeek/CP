@@ -7,14 +7,17 @@ using namespace std;
 #define ull unsigned long long
 #define el cout << '\n';
 #define sp cout << " ";
-#define fastio ios_base::sync_with_stdio(0);cin.tie(0);cout.tie(0);
+#define fastio                    \
+    ios_base::sync_with_stdio(0); \
+    cin.tie(0);                   \
+    cout.tie(0);
 
 void solve()
 {
 
-    ll int  op = 0, ppoi = 0;
+    ll int op = 0, ppoi = 0;
     cin >> op >> ppoi;
-    ll int  rt[op], ca[ppoi];
+    ll int rt[op], ca[ppoi];
     for (size_t it = 0; it < op; it++)
     {
         cin >> rt[it];
@@ -55,7 +58,8 @@ void solve()
 int main()
 {
 #ifndef ONLINE_JUDGE
-    freopen("in.txt", "r", stdin);freopen("out.txt", "w+", stdout);
+    freopen("in.txt", "r", stdin);
+    freopen("out.txt", "w+", stdout);
 #else
     fastio;
 #endif
