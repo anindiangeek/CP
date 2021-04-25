@@ -1,6 +1,17 @@
-*.txt
-*.DS_store
 .vscode/c_cpp_properties.json
+# I seriously wanted to remove these files but I was new to git go I added all of them 
+# still not sure how to use everything but I am figuring it out.
+# ;_;
+*.DS_store
 /.DS_store
 .DS_Store
+# for txt files
+*.txt
 .txt
+# Ignore all
+*
+# Unignore all with extensions
+!*.*
+# Unignore all dirs
+!*/
+.vscode/*
