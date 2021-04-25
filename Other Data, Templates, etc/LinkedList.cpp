@@ -2,36 +2,17 @@
 #include <bits/stdc++.h>
 using namespace std;
 
-struct node
+class Node
 {
+public:
     int data;
-    node *next;
+    Node *next;
 };
-node *head = nullptr; // global dec
+Node *head = nullptr;
 
-void eb(int n)
+void display()
 {
-    node *temp = head;
-    if (head == nullptr)
-    {
-        node *temp2 = new node();
-        temp2->data = n;
-        temp2->next = nullptr;
-        head = temp2;
-        return;
-    }
-    while (temp->next != nullptr)
-    {
-        temp = temp->next;
-    }
-    node *temp2 = new node();
-    temp2->data = n;
-    temp2->next = nullptr;
-    temp->next = temp2;
-}
-void print()
-{
-    node *temp = head;
+    Node *temp = head;
     while (temp != nullptr)
     {
         cout << temp->data << "->";
@@ -40,10 +21,66 @@ void print()
     cout << endl;
 }
 
+void pushfirst(int x)
+{
+    Node *temp = new Node;
+    temp->data = x;
+    temp->next = head;
+    head = temp;
+}
+void pushback(int x)
+{
+    Node *temp2 = head;
+    Node *temp = new Node;
+    temp->data = x;
+    temp->next = nullptr;
+    if (head == nullptr)
+    {
+        pushfirst(x);
+        return;
+    }
+    else
+    {
+        while (temp2->next != nullptr)
+        {
+            temp2 = temp2->next;
+        }
+        temp2->next = temp;
+    }
+}
+void insert(int x, int i = -1)
+{
+    if (i == 0)
+    {
+        pushfirst(x);
+    }
+    else if (i < 0)
+    {
+        pushback(x);
+    }
+    else
+    {
+        Node *temp = head;
+        Node *newnode = new Node;
+        newnode->data = x;
+        newnode->next = nullptr;
+        for (int j = 0; j < (i - 1); j++)
+        {
+            temp = temp->next;
+        }
+        newnode->next = temp->next;
+        temp->next = newnode;
+    }
+}
 int main()
 {
-    eb(2);
-    eb(5);     // //==========>>
-    print();
-    return 0;
+    pushback(3);
+    pushback(30);
+    pushback(300);
+    pushback(3000);
+    pushback(30000);
+    display();
+    insert(4,0);
+    insert(4,3);
+    display();
 }
