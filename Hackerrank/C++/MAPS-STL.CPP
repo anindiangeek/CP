@@ -61,14 +61,5 @@ int main()
             Endl;
         }
     }
-
-    // ll int t;
-    // cin >> t;
-    // do
-    // {
-    //     // solve();
-    //     t--;
-    // } while (t != 0);
-
     return 0;
 }

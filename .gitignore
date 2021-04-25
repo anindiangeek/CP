@@ -17,3 +17,6 @@
 #ignoring vscode
 .vscode/*
 .vscode
+# temp files also includes temp1, temp2.... files (maybe) :")
+temp.cpp
+temp?.cpp
