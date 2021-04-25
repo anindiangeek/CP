@@ -1,86 +1,60 @@
-
 #include <bits/stdc++.h>
 using namespace std;
 
-class Node
-{
-public:
+class Node {
+   public:
     int data;
     Node *next;
 };
 Node *head = nullptr;
 
-void display()
-{
-    Node *temp = head;
-    while (temp != nullptr)
-    {
-        cout << temp->data << "->";
-        temp = temp->next;
-    }
-    cout << endl;
+void reverse() {
 }
 
-void pushfirst(int x)
-{
-    Node *temp = new Node;
-    temp->data = x;
-    temp->next = head;
-    head = temp;
+void display() {
+    Node *temp = head;
+    while (temp != nullptr) {
+        cout << temp->data << " ";
+        temp = temp->next;
+    }
 }
-void pushback(int x)
-{
-    Node *temp2 = head;
+
+Node *NewNodemaker(int x) {
     Node *temp = new Node;
     temp->data = x;
     temp->next = nullptr;
-    if (head == nullptr)
-    {
-        pushfirst(x);
-        return;
-    }
-    else
-    {
-        while (temp2->next != nullptr)
-        {
-            temp2 = temp2->next;
-        }
-        temp2->next = temp;
-    }
+    return temp;
 }
-void insert(int x, int i = -1)
-{
-    if (i == 0)
-    {
-        pushfirst(x);
-    }
-    else if (i < 0)
-    {
-        pushback(x);
-    }
-    else
-    {
+/* 
+    -1 is default -> It Pushes back
+    (val,0) --> pushes at front or wherever you specify.
+*/
+void insert(int x, int i = -1) {
+    Node *nodemanager = NewNodemaker(x);
+    if (i == 0) {
+        nodemanager->next = head;
+        head = nodemanager;
+        return;
+    } else if (i < 0) {
+        Node *temp2 = head;
+        if (head == nullptr) {
+            insert(x, 0);
+            return;
+        } else {
+            while (temp2->next != nullptr) {
+                temp2 = temp2->next;
+            }
+            temp2->next = nodemanager;
+        }
+    } else {
         Node *temp = head;
-        Node *newnode = new Node;
-        newnode->data = x;
-        newnode->next = nullptr;
-        for (int j = 0; j < (i - 1); j++)
-        {
+        for (int j = 0; j < (i - 1); j++) {
             temp = temp->next;
         }
-        newnode->next = temp->next;
-        temp->next = newnode;
+        nodemanager->next = temp->next;
+        temp->next = nodemanager;
     }
 }
-int main()
-{
-    pushback(3);
-    pushback(30);
-    pushback(300);
-    pushback(3000);
-    pushback(30000);
-    display();
-    insert(4,0);
-    insert(4,3);
+int main() {
     display();
 }

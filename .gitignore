@@ -8,6 +8,8 @@
 # for txt files
 *.txt
 .txt
+in.txt
+out.txt
 # Ignore all
 *
 # Unignore all with extensions
