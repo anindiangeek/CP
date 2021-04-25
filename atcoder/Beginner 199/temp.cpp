@@ -1,5 +1,7 @@
 #pragma GCC optimize("Ofast")
 #include <bits/stdc++.h>
+#include <fstream>
+
 using namespace std;
 void *wmem;
 char memarr[96000000];
