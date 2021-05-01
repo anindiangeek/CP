@@ -1,6 +1,6 @@
 /*
-    Problem: https://www.codechef.com/LTIME95B/problems/BENCHP
-    Result : Solved; 
+    Problem: https://www.codechef.com/LTIME95C/problems/SLOOP
+    Result : Not solved.
     author : anindiangeek
 */
 
@@ -11,35 +11,9 @@ using namespace std;
 /* ------------------------------------------------------------------------------- */
 
 void solve() {
-    int n = 0, w = 0, wr = 0;
-    cin >> n >> w >> wr;
-    // vector<ll> v;
-    ll v[n];
-    ll twlifted = wr;
-    for (size_t i = 0; i < n; i++) {
-        cin >> v[i];
-    }
-    if (wr >= w) {
-        cout << "Yes\n";
-        return;
-    } else {
-        sort(v, v + n);
-        int i = 0;
-        do {
-            if (v[i] == v[i + 1]) {
-                twlifted = (twlifted + (v[i] * 2));
-                v[i] = 0;
-                v[i + 1] = 0;
-                i++;
-                if (twlifted >= w) {
-                    cout << "Yes\n";
-                    return;
-                }
-            }
-            i++;
-        } while (i <= n);
-        cout << "No\n";
-    }
+    int m, s;
+    cin >> m >> s;
+    cout << floor(m / s) << endl;
 }
 
 /* ------------------------------------------------------------------------------- */

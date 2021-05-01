@@ -1,6 +1,6 @@
 /*
-    Problem: https://www.codechef.com/LTIME95B/problems/CCHEAVEN
-    Result : Solved.
+    Problem: https://www.hackerearth.com/challenges/competitive/hackerearth-may-easy-21/algorithm/t-rex-and-the-pairs-0a045ce2/ 
+    Result : TLE in a few TC (2)
     author : anindiangeek
 */
 
@@ -11,27 +11,21 @@ using namespace std;
 /* ------------------------------------------------------------------------------- */
 
 void solve() {
-    int l = 0;
-    cin >> l;
-    string str;
-    cin >> str;
-    ll zeros = 0;
-    ll ones = 0;
-    for (size_t i = 0; i < l; i++) {
-        if (str[i] == '0') {
-            zeros++;
-        } else if (str[i] == '1') {
-            ones++;
-        }
-        // checking if L' is possible.
-        if (2 * ones > i) {
-            std::cout << "Yes\n";
-            return;
-        } else {
-            continue;
+    ll n = 0;
+    cin >> n;
+    ll a[n + 1];
+    ll cn = 0;
+    for (size_t i = 1; i <= n; i++) {
+        cin >> a[i];
+    }
+    for (size_t i = 1, j = n; i <= n; i++, j--) {
+        for (size_t j = 1; j <= n; j++) {
+            if (a[i] - a[j] == (i * i) + (j * j)) {
+                cn++;
+            }
         }
     }
-    std::cout << "No\n";
+    cout << cn << "\n";
 }
 
 /* ------------------------------------------------------------------------------- */
@@ -45,10 +39,10 @@ int main() {
 #else
 //n
 #endif
-    ll int testcases = 0;
-    cin >> testcases;
-    while (testcases--)
-        solve();
+    // ll int testcases = 0;
+    // cin >> testcases;
+    // while (testcases--)
+    solve();
     return 0;
 }
 /* ------------------------------------------------------------------------------- */

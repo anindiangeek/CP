@@ -1,6 +1,6 @@
 /*
-    Problem: https://www.codechef.com/LTIME95B/problems/BENCHP
-    Result : Solved; 
+    Problem: https://www.codechef.com/LTIME95B/problems/EQUINOX
+    Result :done. 
     author : anindiangeek
 */
 
@@ -11,37 +11,36 @@ using namespace std;
 /* ------------------------------------------------------------------------------- */
 
 void solve() {
-    int n = 0, w = 0, wr = 0;
-    cin >> n >> w >> wr;
-    // vector<ll> v;
-    ll v[n];
-    ll twlifted = wr;
+    ll int n, a, b;
+    cin >> n >> a >> b;
+    ll int ptsa = 0;
+    ll int ptsb = 0;
+    vector<string> v;
     for (size_t i = 0; i < n; i++) {
-        cin >> v[i];
+        string ss;
+        cin >> ss;
+        v.push_back(ss);
     }
-    if (wr >= w) {
-        cout << "Yes\n";
-        return;
+    for (size_t i = 0; i < v.size(); i++) {
+        if (v[i][0] == 'E' || v[i][0] == 'Q' || v[i][0] == 'U' || v[i][0] == 'I' || v[i][0] == 'N' || v[i][0] == 'X' || v[i][0] == 'O') {
+            ptsb = ptsb + a;
+        } else {
+            ptsa = ptsa + b;
+        }
+    }
+    if (ptsa >= ptsb) {
+        if (ptsb == ptsa) {
+            cout << "DRAW" << endl;
+            return;
+        } else {
+            cout << "ANURADHA" << endl;
+            return;
+        }
     } else {
-        sort(v, v + n);
-        int i = 0;
-        do {
-            if (v[i] == v[i + 1]) {
-                twlifted = (twlifted + (v[i] * 2));
-                v[i] = 0;
-                v[i + 1] = 0;
-                i++;
-                if (twlifted >= w) {
-                    cout << "Yes\n";
-                    return;
-                }
-            }
-            i++;
-        } while (i <= n);
-        cout << "No\n";
+        cout << "SARTHAK" << endl;
+        return;
     }
 }
-
 /* ------------------------------------------------------------------------------- */
 int main() {
     ios_base::sync_with_stdio(false);
