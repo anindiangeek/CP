@@ -1,3 +1,11 @@
+5
+3
+ABA
+11
+DDBBCCCBBEZ
+7
+FFGZZZY
 1
-5 2
-1 2 3 4 5
+Z
+2
+AB

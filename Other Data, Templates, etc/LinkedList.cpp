@@ -1,5 +1,10 @@
-#include <bits/stdc++.h>
+#include <iostream>
+#include <list>
+std::list<int> l;
+
 using namespace std;
+class LinkedList {
+};
 
 class Node {
    public:
@@ -9,15 +14,15 @@ class Node {
 Node *head = nullptr;
 Node *tail = nullptr;
 
-void reverse() {
-}
-
 void display() {
     Node *temp = head;
+    int i = 0;
     while (temp != nullptr) {
-        cout << temp->data << " ";
+        cout << temp->data << " "
+             << "<-" << i;
         cout << endl;
         temp = temp->next;
+        i++;
     }
 }
 
@@ -29,16 +34,20 @@ Node *NewNodemaker(int x) {
     // tail = temp;
     return temp;
 }
-/* 
+/*
     -1 is default -> It Pushes back
     (val,0) --> pushes at front or wherever you specify.
 */
+// creating a function named finsert (forced insert)
+// It will insert the data at any index entered and will fill up the not avaible gaps with garbage or defined values.
+// I want eachvalue to be optional and not mandatory to give and also I dont want to make it a default arguement.
 void insert(int x, int i = -1) {
     // making and getting a new node in Heap.
-    Node *nodemanager = NewNodemaker(x);
+    // I have made a node in here and that was causing memory leak issues so created in indivusal places.
     //checking where to insert.
     //Pushing in beginning
     if (i == 0) {
+        Node *nodemanager = NewNodemaker(x);
         nodemanager->next = head;
         head = nodemanager;
         if (tail == nullptr) {
@@ -48,7 +57,6 @@ void insert(int x, int i = -1) {
     }
     //Pushing Back
     else if (i < 0) {
-        Node *temp2 = head;
         // checking if it's the first push.
         if (head == nullptr) {
             insert(x, 0);
@@ -56,6 +64,7 @@ void insert(int x, int i = -1) {
         }
         //not a first push, so pushing in back.
         else {
+            Node *nodemanager = NewNodemaker(x);
             // for O(1) time
             tail->next = nodemanager;
             tail = nodemanager;
@@ -84,30 +93,36 @@ void insert(int x, int i = -1) {
                 if (temp == tail) {
                     insert(x, -1);
                     return;
-                    /* also if you see this code then I used break here before
-                    instead of return
-                    then I was getting two same value consecutively inserted
-                    how is this possble? won't it directly go to the function and 
-                    stop executing what's below?
-                    I also want your thoughts wheather it is good to do this I mean pushing back
-                    if that location does not exists or I should fill in the gaps in midlle with random
-                    garbage values and push it in that specified location.
-               */
                 }
             }
+            Node *nodemanager = NewNodemaker(x);
             nodemanager->next = temp->next;
             temp->next = nodemanager;
         }
     }
 }
+
+void fInsert(int data, signed pos, bool override, int eachvalue) {
+    if (head == tail and pos > 1) {
+        insert(eachvalue);
+        fInsert(data, pos, override, eachvalue);
+        return;
+    }
+    Node *nodemanager = NewNodemaker(data);
+    Node *temp = head;
+    for (size_t i = 0; i < pos - 1; i++) {
+        temp = temp->next;
+        if (temp == tail) {
+            insert(eachvalue, -1);
+        }
+    }
+    nodemanager->next = temp->next;
+    temp->next = nodemanager;
+    return;
+}
+
 int main() {
     freopen("//Users//anindiangeek//Documents//CP//o.txt", "w+", stdout);
-    insert(23, 15);
-    insert(22);
-    insert(3, 5);
-    insert(53, -1);
-    insert(263);
-    insert(633, 0);
-    insert(343, 3);
+    fInsert(5, 7, true, 0);
     display();
 }
