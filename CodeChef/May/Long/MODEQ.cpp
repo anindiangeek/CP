@@ -23,9 +23,7 @@ void solve() {
             }
     }
     if (m % 3 == 0) {
-        
     } else {
-        
     }
 
     cout << counter << "\n";
