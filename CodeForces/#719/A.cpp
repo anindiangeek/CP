@@ -65,12 +65,12 @@ int main() {
     ios_base::sync_with_stdio(false);
     cin.tie(0);
     cout.tie(0);
-#ifndef ONLINE_JUDGE
-    // freopen("//Users//anindiangeek//Documents//CP//i.txt", "r", stdin);
-    // freopen("//Users//anindiangeek//Documents//CP//o.txt", "w+", stdout);
-#else
+// #ifndef ONLINE_JUDGE
+    freopen("//Users//anindiangeek//Documents//CP//i.txt", "r", stdin);
+    freopen("//Users//anindiangeek//Documents//CP//o.txt", "w+", stdout);
+// #else
 //n
-#endif
+// #endif
     ll int testcases = 0;
     cin >> testcases;
     while (testcases--)
