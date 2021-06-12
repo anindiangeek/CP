@@ -1,5 +1,5 @@
 /*
-    Problem: (codeforces div 3)
+    Problem: 
     author : anindiangeek
 */
 
@@ -9,20 +9,37 @@ using namespace std;
 #define ll long long
 /* ------------------------------------------------------------------------- */
 
+int steps(int &a, int &b, int &c, int &d)
+{
+    // int temp = 0;
+    // temp = pow(abs(c - a), 2) + pow(abs(d - b), 2);
+    // temp = ceil(sqrt(temp));
+    // return temp;
+    int step1 = abs(c - a);
+    int step2 = abs(d - b);
+    return step1 + step2;
+}
+bool isreachable(int &step, int &k)
+{
+    if (step == 1 and k >= 0)
+    {
+        return true;
+    }
+    int left = k - step;
+    if (left % 2 == 0 or left == 0)
+        return true;
+    else
+        return false;
+}
 void solve()
 {
-    int n = 0;
-    cin >> n;
-    vector<int> v;
-    for (size_t i = 0; i < n; i++)
-    {
-        int temp = 0;
-        cin >> temp;
-        v.push_back(temp);
-    }
-    // sort(v.begin(), v.end());
-    
-
+    int a, b, c, d, k;
+    cin >> a >> b >> c >> d >> k;
+    int step = abs(c - a) + abs(d - b);
+    if (isreachable(step, k))
+        cout << "YES\n";
+    else
+        cout << "NO\n";
 }
 
 /* ------------------------------------------------------------------------ */
