@@ -2,6 +2,13 @@
 	Problem: https://atcoder.jp/contests/abc206/tasks/abc206_c
 	author : anindiangeek
 	Status : couldn't solve
+	Learnings 
+	
+		> For a sequence the no of pairs excluding the pair having same both values 
+		  can be calculated by n*(n-1) / 2.
+		> usage of map. https://atcoder.jp/contests/abc206/editorial/2105
+		> do check out the editorial.
+	
 */
 
 /* - - - - - - - - - - header/namespaces/defines - - - - - - - - - - */
@@ -53,6 +60,41 @@ void solve()
 		was matching rest was wrong.
 	*/
 	/*did't get the right answer*/
+	/*
+		EDITORIAL SOLUTION
+		METHOD 1
+		-the total number will be ans=>n*(n-1)/2
+		-we just now need to remove the pairs who have Ai=Aj
+		-we will sort the array.
+		-for an integer q, we will subtract p(p-1)/2 from answer for each integer q.
+
+	*/
+	ll n = 0;
+	cin >> n;
+	ll a[n], ans = n * (n - 1) / 2;
+	for (size_t i = 0; i < n; i++)
+	{
+		cin >> a[i];
+	}
+	sort(a, a + n);
+	for (size_t i = 0; i < n; i++)
+	{
+		if (a[i] == a[i + 1])
+		{
+			int temp = 1;
+			while (a[i] == a[i + 1])
+			{
+				temp++;
+				i++;
+			}
+			ans -= (temp * (temp - 1)) / 2;
+		}
+	}
+	cout << ans << "\n";
+
+	// still some of the answers are incorrect.
+	//https://atcoder.jp/contests/abc206/editorial/2105
+	// 	do check out the map method it was good ans fast and less complex O(N);
 }
 
 /*- - - - - - - - - - - main() starts here - - - - - - - - - - */

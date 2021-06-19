@@ -15,7 +15,6 @@ void solve()
 	cin >> L >> R;
 	ll total = (R - L) * ((R - L) - 1);
 	cout << total << "\n";
-	
 }
 
 /*- - - - - - - - - - - main() starts here - - - - - - - - - - */

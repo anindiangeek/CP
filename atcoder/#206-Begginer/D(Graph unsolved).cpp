@@ -1,6 +1,12 @@
 /*
 	Problem: https://atcoder.jp/contests/abc206/tasks/abc206_d
 	author : anindiangeek
+	Status :> GRAPH qwestion and I hadn't learned about graphs yet.
+
+	Learnings :
+
+	> It's not mandatory that in graph questions there will be mentioned that it will be solved by graph.
+	
 */
 
 /* - - - - - - - - - - header/namespaces/defines - - - - - - - - - - */
@@ -11,7 +17,6 @@ using namespace std;
 
 void solve()
 {
-	
 }
 
 /*- - - - - - - - - - - main() starts here - - - - - - - - - - */

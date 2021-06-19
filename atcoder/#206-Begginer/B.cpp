@@ -1,6 +1,15 @@
 /*
 	Problem: https://atcoder.jp/contests/abc206/tasks/abc206_b
 	author : anindiangeek
+	Status : Solved.
+	Learnings:
+	> Binary search is not only apcliable to arrys or lists of data.
+
+	at the nth day the sum will be n(n*1)/2;
+	for very large values like 10e18.
+	we can use directed binary search.
+	to get the solution effeincitly.
+
 */
 
 /* - - - - - - - - - - header/namespaces/defines - - - - - - - - - - */
