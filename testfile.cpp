@@ -1,63 +1,73 @@
-/*
-    Problem: 
-    author : anindiangeek
-*/
-
-/* ------------------------------------------------------------------------ */
 #include <bits/stdc++.h>
 using namespace std;
-#define ll long long
-/* ------------------------------------------------------------------------- */
 
-int steps(int &a, int &b, int &c, int &d)
+int noofprimnes(int a, int b)
 {
-    // int temp = 0;
-    // temp = pow(abs(c - a), 2) + pow(abs(d - b), 2);
-    // temp = ceil(sqrt(temp));
-    // return temp;
-    int step1 = abs(c - a);
-    int step2 = abs(d - b);
-    return step1 + step2;
-}
-bool isreachable(int &step, int &k)
-{
-    if (step == 1 and k >= 0)
-    {
-        return true;
-    }
-    int left = k - step;
-    if (left % 2 == 0 or left == 0)
-        return true;
-    else
-        return false;
-}
-void solve()
-{
-    int a, b, c, d, k;
-    cin >> a >> b >> c >> d >> k;
-    int step = abs(c - a) + abs(d - b);
-    if (isreachable(step, k))
-        cout << "YES\n";
-    else
-        cout << "NO\n";
+	// Declare the variables
+	int i, j;
+	long long count = 0;
+
+	// Ask user to enter lower value of interval please not
+	// interval < 0 cannot be prime numbers
+	// cout << "Enter lower bound of the interval: ";
+	// cin >> a; // Take input
+
+	// Ask user to enter upper value of interval
+	// cout << "\nEnter upper bound of the interval: ";
+	// cin >> b; // Take input
+
+	// Print display message
+	// cout << "\nPrime numbers between " << a << " and " << b
+	//      << " are: ";
+
+	if (a <= 2)
+	{
+		a = 2;
+		if (b >= 2)
+		{
+			// cout << a << " ";
+			count++;
+			a++;
+		}
+	}
+
+	// MAKING SURE THAT a IS ODD BEFORE WE BEGIN
+	// THE LOOP
+	if (a % 2 == 0)
+		a++;
+
+	// NOTE : WE TRAVERSE THROUGH ODD NUMBERS ONLY
+	for (i = a; i <= b; i = i + 2)
+	{
+
+		// flag variable to tell
+		// if i is prime or not
+		bool flag = 1;
+
+		// WE TRAVERSE TILL SQUARE ROOT OF j only.
+		// (LARGEST POSSIBLE VALUE OF A PRIME FACTOR)
+		for (j = 2; j * j <= i; ++j)
+		{
+			if (i % j == 0)
+			{
+				flag = 0;
+				break;
+			}
+		}
+
+		// flag = 1 means i is prime
+		// and flag = 0 means i is not prime
+		if (flag == 1)
+		{
+			count++;
+			// cout << i << " ";
+		}
+	}
+
+	return count;
 }
 
-/* ------------------------------------------------------------------------ */
 int main()
 {
-    ios_base::sync_with_stdio(0);
-    cin.tie(0);
-    cout.tie(0);
-#ifndef ONLINE_JUDGE
-    freopen("//Users//anindiangeek//Documents//CP//i.txt", "r", stdin);
-    freopen("//Users//anindiangeek//Documents//CP//o.txt", "w+", stdout);
-#else
-//n
-#endif
-    ll int testcases = 0;
-    cin >> testcases;
-    while (testcases--)
-        solve();
-    return 0;
+	cout << noofprimnes(4, 7);
 }
-/* ---------------------------------------------------------------------- */
