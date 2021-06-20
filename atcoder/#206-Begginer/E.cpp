@@ -1,6 +1,7 @@
 /*
 	Problem: https://atcoder.jp/contests/abc206/tasks/abc206_e
 	author : anindiangeek
+	Learnings
 */
 
 /* - - - - - - - - - - header/namespaces/defines - - - - - - - - - - */

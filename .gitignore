@@ -13,7 +13,7 @@ out.txt
 # Ignore all
 *
 # Unignore all with extensions
-!*.*
+# !*.*
 # Unignore all dirs
 !*/
 #ignoring vscode
@@ -24,3 +24,4 @@ temp.cpp
 temp?.cpp
 tempCodeRunnerFile.cpp
 /tempCodeRunnerFile.cpp
+.plist
