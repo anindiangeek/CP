@@ -11,53 +11,6 @@ using namespace std;
 
 void solve()
 {
-	vector<pair<string, int> > v;
-	vector<string> v2;
-	int n1;
-	cin >> n1;
-	for (int i = 0; i < n1; i++)
-	{
-		string s;
-		int temp = 0;
-		cin >> s;
-		cin >> temp;
-		// pair<string, int> p;
-		v.push_back(make_pair(s, temp));
-	}
-	// for (int i = 0; i < n1; i++)
-	// {
-	// 	cout << v[i].first << " " << v[i].second;
-	// 	cout << "\n";
-	// }
-	int n2;
-	cin >> n2;
-	for (int i = 0; i < n2; i++)
-	{
-		string s;
-		cin >> s;
-		v2.push_back(s);
-	}
-	// for (int i = 0; i < n2; i++)
-	// {
-	// 	cout << v2[i] << endl;
-	// }
-	// vector<pair<string, int> > ans;
-	for (int i = 0; i < n1; i++)
-	{
-		for (size_t j = 0; j < n2; j++)
-		{
-			if (v[i].first == v2[j])
-			{
-				cout <<"NSE:"<<v[i].first << "\t" << v[i].second;
-				cout << endl;
-			}
-		}
-	}
-	// for (int i = 0; i < n1; i++)
-	// {
-	// 	cout << v[i].first << " " << v[i].second;
-	// 	cout << "\n";
-	// }
 }
 
 /*- - - - - - - - - - - main() starts here - - - - - - - - - - */
@@ -72,7 +25,7 @@ int main()
 #else
 //nothing
 #endif
-	ll int testcases = 0;
+	ll int testcases = 1;
 	cin >> testcases;
 	while (testcases--)
 		solve();
