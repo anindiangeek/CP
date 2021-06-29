@@ -11,6 +11,7 @@ using namespace std;
 
 void solve()
 {
+	
 }
 
 /*- - - - - - - - - - - main() starts here - - - - - - - - - - */
