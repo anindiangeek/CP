@@ -11,7 +11,8 @@ using namespace std;
 
 void solve()
 {
-	
+	int64_t x = 0, y = 0, z = 0;
+	cin >> x >> y >> z;
 }
 
 /*- - - - - - - - - - - main() starts here - - - - - - - - - - */
@@ -21,8 +22,8 @@ int main()
 	cin.tie(0);
 	cout.tie(0);
 #ifndef ONLINE_JUDGE
-	freopen("//Users//anindiangeek//Documents//CP//i.txt", "r", stdin);
-	freopen("//Users//anindiangeek//Documents//CP//o.txt", "w+", stdout);
+	freopen("C://Users//anind//Documents//CP//i.txt", "r", stdin);
+	freopen("C://Users//anind//Documents//CP//o.txt", "w+", stdout);
 #else
 //nothing
 #endif
