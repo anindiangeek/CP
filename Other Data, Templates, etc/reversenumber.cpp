@@ -1,7 +1,10 @@
 template <class T>
-T reversenumber(T n) {
+T reversenumber(T n)
+{
     T rev = 0;
-    for (size_t i = n; i > 0; i = i / 10) {
+    for (size_t i = n; i > 0; i = i / 10)
+    {
         rev = ((rev * 10) + (i % 10));
     }
     return rev;
+}
