@@ -2,7 +2,10 @@
 #previously gitignore was not working properly
 # JAI SHREE RAM 
 
-
+#temp files for testing purposes
+temp.cpp
+test.cpp
+tempcoderunner.cpp
 
 #for input,output & cerr files
 *.txt
