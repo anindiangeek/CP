@@ -1,0 +1,19 @@
+#another try making this work
+#previously gitignore was not working properly
+# JAI SHREE RAM 
+
+
+
+#for input,output & cerr files
+*.txt
+
+#executable binary files
+*.exe
+
+#VS-CODE files
+*code-workspace
+.vscode/
+./vscode
+
+
+# it works ;)
