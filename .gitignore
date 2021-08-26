@@ -10,6 +10,9 @@
 .txt
 in.txt
 out.txt
+o.txt
+i.txt
+err.txt
 # Ignore all
 *
 # Unignore all with extensions
